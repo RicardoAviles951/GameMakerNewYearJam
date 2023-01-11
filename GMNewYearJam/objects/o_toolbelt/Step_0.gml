@@ -27,7 +27,7 @@ for (var i = 0; i < len;i++){
 					
 						case "Water":
 							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
-								class        = new ToolClass("Watering Can",toolB);
+								class        = new ToolClass("Water",toolB);
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
@@ -36,7 +36,7 @@ for (var i = 0; i < len;i++){
 					
 						case "Hoe":
 							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
-								class        = new ToolClass("Garden Hoe",toolC);
+								class        = new ToolClass("Hoe",toolC);
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
