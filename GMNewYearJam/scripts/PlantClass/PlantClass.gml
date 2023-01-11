@@ -1,12 +1,13 @@
-function PlantClass(_name,_stage,_wtrlevel,_size,_love,_sprite,_qual,_wtr_ret,_growthrate,_value) constructor{
-	name    = _name;
-	stage   = _stage;
-	wtr_lvl = _wtrlevel;
-	size    = _size;
-	love    = _love; 
-	sprite  = _sprite;
+function PlantClass(_name,_stage,_wtrlevel,_love,_sprite,_qual,_wtr_ret,_growth,_growthrate,_value, _neg) constructor{
+	name = _name;
+	sprite = _sprite;
+	stage = _stage;
+	Wtr_lvl = _wtrlevel;
+	Wtr_retention = _wtr_ret;
+	growth = _growth;
+	growthrate = _growthrate;
+	value = _value;
+	love = _love;
 	quality = _qual;
-	wtr_ret = _wtr_ret;
-	grwth_rt= _growthrate;
-	value   = _value;
+	neglect = _neg;
 }

@@ -49,7 +49,7 @@ for (var i = 0; i < grid_width;i++){
 		if str = "o_wall"{
 			GroundArray[i,k] = 0;
 		}
-		show_debug_message(GroundArray[i,k]);
+		//show_debug_message(GroundArray[i,k]);
 	}
 }
 
