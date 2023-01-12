@@ -8,7 +8,10 @@ enum ground_state{
 //Randomly assigning ground state
 state = ground_state.grass;
 sprite_index = s_grass
-image_index = irandom(1);
+image_index = irandom(3);
+
+current_plant = noone;
+watered = false;
 //Setting sprite based on state
 //switch(state){
 //	case ground_state.grass:

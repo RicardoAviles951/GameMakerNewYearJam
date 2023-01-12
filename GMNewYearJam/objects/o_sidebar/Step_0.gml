@@ -73,10 +73,10 @@ if sidemenu
 								{
 									case "SeedA":
 										show_debug_message("seed A created")
-										with(instance_create_layer(mouse_x-16,mouse_x-16,"Plants",o_plant)){
+										with(instance_create_layer(mouse_x-16,mouse_y-16,"Plants",o_plant)){
 											class = new PlantClass("SeedA",0,1,0,s_seedA,0,0,0,0,10,0);
 											sprite_index = class.sprite;
-											state = drag_state.moving;
+											state = plant_state.moving;
 										}
 										sidemenu = false;
 										side_selected = true;
