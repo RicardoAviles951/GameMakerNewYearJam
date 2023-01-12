@@ -8,7 +8,7 @@ function Tool_trowel(){
 			x = mouse_x - 16;
 			y = mouse_y - 16
 			//If you click on a tile while having the trowel equipped 
-			if left_click
+			if left_click or left_hold
 			{
 			//Check if the tile is actually ground
 				//First store the current column and row
@@ -29,7 +29,7 @@ function Tool_trowel(){
 							show_debug_message("dirt!");
 							//Turn Grass into plain dirt and changes state
 							sprite_index = s_dirt_plain;
-							image_index = 1;
+							image_index = 3;
 							state = ground_state.dirt_hole;
 						}
 						

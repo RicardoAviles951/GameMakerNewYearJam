@@ -1,10 +1,11 @@
 class = noone;
 
-enum drag_state{
+enum plant_state{
 	idle,
 	moving,
+	planted
 }
-state = drag_state.idle;
+state = plant_state.idle;
 current_col = noone;
 current_row = noone;
 //Debug

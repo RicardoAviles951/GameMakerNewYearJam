@@ -12,26 +12,17 @@ for (var i = 0; i < grid_width; i++)
         //Perform Logic on non-void cells
 		if gridarray[i,j] != states.void{
 		
-        if i == col and j == row{
-			if gridarray[i,j] != states.selected // if not selected already
-			{
+        if i == col and j == row
+		{
 				gridarray[i,j] = states.hover; //show hover
-				if mouse_check_button_pressed(mb_left) gridarray[i,j] = states.selected; // if clicked mark as selected
-				if mouse_check_button(mb_left) gridarray[i,j] = states.selected;
-			}
-			else{ // else if it is selected
-				if mouse_check_button_pressed(mb_right) gridarray[i,j] = states.inactive;
-				if mouse_check_button(mb_right) gridarray[i,j] = states.inactive;
-			}
 			
 		}
-		else{
-			if gridarray[i,j] != states.selected
-			{
+		else
+		{
 				gridarray[i,j] = states.inactive;
-			}
 		}
 	}
 		
     }
 }
+
