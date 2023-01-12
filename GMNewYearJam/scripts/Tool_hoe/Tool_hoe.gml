@@ -11,13 +11,13 @@ function Tool_hoe(){
 			x = mouse_x - 16;
 			y = mouse_y - 16
 			//If you click on a tile while having the trowel equipped 
-			if left_click
+			if left_click or left_hold
 			{
 			//Check if the tile is actually ground
 				//First store the current column and row
 				current_col = o_grid.col;
 				current_row = o_grid.row;
-				
+				show_debug_message(current_row);
 				//Check the ground array 
 				var tile_id = o_grid.GroundArray[current_col,current_row];//store in local var for ease of writing
 				//Check if the tile is NOT ground

@@ -1,5 +1,5 @@
 c = c_white;
-alpha = .1;
+alpha = 0;
 pos = 0;
 col = 0;
 row = 0;
@@ -11,7 +11,7 @@ enum states{
 }
 
 grid_width = 20;
-grid_height = 10;
+grid_height = 11;
 gridarray = [0,0];
 cell_size = 32;
 
