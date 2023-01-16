@@ -35,8 +35,11 @@ enum popout{
 	seed,
 	shop
 }
+//draw popout menu or seeds or shop
 sidemenu = false;
+//If something from the popout has been selected
 side_selected = false;
+//If you have selected seed or shop will change this state
 popout_state = popout.none;
 
 
@@ -47,22 +50,25 @@ var vcells  = 2;
 
 for (var s = 0; s < hcells; s++){
 	for (var i = 0; i < vcells; i++){
-	seedarray[s,i] = new Seed("TestSeed",s_seedA,0);
+	seedarray[s,i] = new Seed("TestSeed",s_seed_chickpea,0);
 	show_debug_message("("+string(s)+","+string(i)+")");
 	}
 }
 
-//SeedA
-seedarray[0,0].name = "SeedA";
-seedarray[0,0].sprite = s_seedA;
-//SeedB
-seedarray[0,1].name = "SeedB";
-seedarray[0,1].sprite = s_seedB;
-//SeedC
-seedarray[1,0].name = "SeedC";
-seedarray[1,0].sprite = s_seedC;
-//SeedC
-seedarray[1,1].name = "SeedD";
-seedarray[1,1].sprite = s_seedD;
+//ChickPea
+seedarray[0,0].name = "Chickpea";
+seedarray[0,0].sprite = s_seed_chickpea;
+//Tomatillo
+seedarray[0,1].name = "Tomatillo";
+seedarray[0,1].sprite = s_seed_tomatillo;
+//Gooseberry
+seedarray[1,0].name = "Gooseberry";
+seedarray[1,0].sprite = s_seed_gooseberry;
 
+//Gooseberry
+seedarray[1,1].name = "";
+seedarray[1,1].sprite = s_pixel;
+
+current_seed = [s_pack_chickpeas,s_pack_tomatillos,s_pack_gooseberries];
+seed_selected = false;
 show_debug_message(seedarray);

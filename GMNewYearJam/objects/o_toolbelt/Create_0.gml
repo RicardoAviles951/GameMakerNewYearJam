@@ -18,6 +18,11 @@ toolArray[1,1] = "Water";
 toolArray[2,1] = "Hoe";
 toolArray[3,1] = "Love";
 
+toolsprites[0] = s_tool_trowel;
+toolsprites[1] = s_tool_water;
+toolsprites[2] = s_tool_hoe;
+toolsprites[3] = s_tool_love;
+
 color = c_white;
 
 selected = false;

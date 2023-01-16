@@ -1,53 +1,239 @@
 GetInput();
-switch(state){
-	case plant_state.idle:
-	
-	break;
-	
-	case plant_state.moving:
-		x = mouse_x - 16;
-		y = mouse_y - 16;
+//Stats 
+switch(class.name)
+{
+	case "Chickpea":
 		
-		if left_click
-			{
-			//Check if the tile is actually ground
-				//First store the current column and row
-				current_col = o_grid.col;
-				current_row = o_grid.row;
+		//nested switch on stage
+		switch(class.stage)
+		{
+			case 0:
+			show_debug_message("CHICKPEA");
+				//Set a sprite to set the ground to
+				class.sprite = s_dirt_mound;
 				
-				//Check the ground array 
-				var tile_id = o_grid.GroundArray[current_col,current_row];//store in local var for ease of writing
-				//Check if the tile is NOT ground
-				if tile_id != 0
+				//As long as the growth is less than 1, then grow.
+				if class.growth < 1 
 				{
-					//With statement to avoid confusing chained dot accessors
-					with(tile_id)
-					{
-						//Check if the ground is grass
-						if state == ground_state.dirt_hole
-						{
-							show_debug_message("Planted");
-							image_index = 1;
-							current_plant = other.id;
-							o_sidebar.side_selected = false;
-							other.state = plant_state.planted;
-							state = ground_state.plant;
-						}
-						
-					}
+					class.growth += (1/(global.fullday*.5));
 				}
-				else
+				else //Else reset growth vars
 				{
-					//Play a wrong sound or show a message
-					show_debug_message("NOT GROUND");
+					class.growth = 0;
+					class.stage +=1;
 				}
-				//-------end of if tile_id
-			}
+			break;
 			
-		
+			case 1:
+				//Set a sprite to set the ground to
+				class.sprite = s_chickpea_full;
+				//As long as the growth is less than 1, then grow.
+				if class.growth < 1 
+				{
+					class.growth += (1/(global.fullday*.5));
+				}
+				else //Else reset growth vars
+				{
+					class.growth = 0;
+					class.stage +=1;
+				}
+			break;
+			
+			case 2:
+				//Set a sprite to set the ground to
+				//class.sprite = s_chickpea2;
+				//As long as the growth is less than 1, then grow.
+				if class.growth < 1 
+				{
+					class.growth += (1/(global.fullday*.5));
+				}
+				else //Else reset growth vars
+				{
+					class.growth = 0;
+					class.stage +=1;
+				}
+			break;
+			
+			case 3:
+				if class.growth < 1 
+				{
+					class.growth += (1/(global.fullday*.5));
+				}
+				else //Else reset growth vars
+				{
+					//class.growth = 0;
+					//class.stage +=1;
+				}
+			break;
+		}
+		if class.sprite != s_dirt_mound class.index = class.stage-1;
 	break;
 	
-	case plant_state.planted:
-		visible = false;
+	case "Tomatillo":
+		//nested switch on stage
+		switch(class.stage)
+		{
+			case 0: //Mound stage
+				//Set a sprite to set the ground to
+				class.sprite = s_dirt_mound;
+				
+				//As long as the growth is less than 1, then grow.
+				if class.growth < 1 
+				{
+					class.growth += (1/(global.fullday*.5));
+				}
+				else //Else reset growth vars
+				{
+					class.growth = 0;
+					class.stage +=1;
+				}
+			break;
+			
+			case 1:
+				class.sprite = s_tomatillo_full;
+				//As long as the growth is less than 1, then grow.
+				if class.growth < 1 
+				{
+					class.growth += (1/(global.fullday*.5));
+				}
+				else //Else reset growth vars
+				{
+					class.growth = 0;
+					class.stage +=1;
+				}
+			break;
+			
+			case 2:
+				//As long as the growth is less than 1, then grow.
+				if class.growth < 1 
+				{
+					class.growth += (1/(global.fullday*.5));
+				}
+				else //Else reset growth vars
+				{
+					class.growth = 0;
+					class.stage +=1;
+				}
+			break;
+			
+			case 3:
+				//As long as the growth is less than 1, then grow.
+				if class.growth < 1 
+				{
+					class.growth += (1/(global.fullday*.5));
+				}
+				else //Else reset growth vars
+				{
+					class.growth = 0;
+					class.stage +=1;
+				}
+			break;
+			
+			case 4:
+				//As long as the growth is less than 1, then grow.
+				if class.growth < 1 
+				{
+					class.growth += (1/(global.fullday*.5));
+				}
+				else //Else reset growth vars
+				{
+					class.growth = 0;
+					class.stage +=1;
+				}
+			break;
+			
+			case 5:
+				//As long as the growth is less than 1, then grow.
+				if class.growth < 1 
+				{
+					class.growth += (1/(global.fullday*.5));
+				}
+				else //Else reset growth vars
+				{
+					//class.growth = 0;
+					//class.stage +=1;
+				}
+			break;
+			
+		}
+		if class.sprite != s_dirt_mound class.index = class.stage-1;
 	break;
-}
+	
+	case "Gooseberry":
+		//nested switch on stage
+		switch(class.stage)
+		{
+			case 0:
+				//Set a sprite to set the ground to
+				class.sprite = s_dirt_mound;
+				
+				//As long as the growth is less than 1, then grow.
+				if class.growth < 1 
+				{
+					class.growth += (1/(global.fullday*.5));
+				}
+				else //Else reset growth vars
+				{
+					class.growth = 0;
+					class.stage +=1;
+				}
+			break;
+			
+			case 1:
+				class.sprite = s_gooseberry_full;
+				//As long as the growth is less than 1, then grow.
+				if class.growth < 1 
+				{
+					class.growth += (1/(global.fullday*.5));
+				}
+				else //Else reset growth vars
+				{
+					class.growth = 0;
+					class.stage +=1;
+				}
+			break;
+			
+			case 2:
+				//As long as the growth is less than 1, then grow.
+				if class.growth < 1 
+				{
+					class.growth += (1/(global.fullday*.5));
+				}
+				else //Else reset growth vars
+				{
+					class.growth = 0;
+					class.stage +=1;
+				}
+			break;
+			
+			case 3:
+				//As long as the growth is less than 1, then grow.
+				if class.growth < 1 
+				{
+					class.growth += (1/(global.fullday*.5));
+				}
+				else //Else reset growth vars
+				{
+					class.growth = 0;
+					class.stage +=1;
+				}
+			break;
+			
+			case 4:
+				//As long as the growth is less than 1, then grow.
+				if class.growth < 1 
+				{
+					class.growth += (1/(global.fullday*.5));
+				}
+				else //Else reset growth vars
+				{
+					//class.growth = 0;
+					//class.stage +=1;
+				}
+			break;
+		}
+		if class.sprite != s_dirt_mound class.index = class.stage-1;
+	break;
+}//End of switch on name
+
+show_debug_message(class.name);

@@ -10,4 +10,5 @@ function PlantClass(_name,_stage,_wtrlevel,_love,_sprite,_qual,_wtr_ret,_growth,
 	love = _love;
 	quality = _qual;
 	neglect = _neg;
+	index = 0;
 }

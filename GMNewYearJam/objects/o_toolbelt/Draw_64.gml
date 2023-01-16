@@ -1,6 +1,3 @@
-//Get Dimensions of GUI
-var guiW = display_get_gui_width()
-var guiH = display_get_gui_height()
 //Get length of array
 var len = array_length(toolArray);
 //Calculate length of toolbar
@@ -17,7 +14,9 @@ for (var i = 0; i < len; i++)
 		//Checks if hovered 
 		if toolArray[@ i,0] == toolstate.hover color = c_blue;
 		//Draws grid sprites
+		draw_sprite_ext(toolsprites[i],0,startX+i*cellsize,startY,2,2,0,c_white,1);
 		draw_sprite_ext(s_grid,0,startX+i*cellsize,startY,4,4,0,color,1);
+		
 		draw_text(startX+8+k*cellsize,startY+8,toolArray[@ k,1]);
 	}
 }

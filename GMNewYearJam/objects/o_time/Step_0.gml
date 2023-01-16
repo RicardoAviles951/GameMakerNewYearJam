@@ -16,17 +16,17 @@ if global.minutes > 0 and global.minutes < global.fullday/3{
 	//return red and blue to 1
 	
 	if red < 1{
-		red+=diff(min_red,8);
+		red+=diff(min_red,240);
 	}
 	if blue < 1{
-		blue +=diff(min_blue,8);
+		blue +=diff(min_blue,240);
 	}
 	if green < 1{
-		green+=diff(min_green,8);
+		green+=diff(min_green,240);
 	}
-	show_debug_message("Red "+ string(red));
-	show_debug_message("blue "+ string(blue));
-	show_debug_message("Green "+string(green));
+	//show_debug_message("Red "+ string(red));
+	//show_debug_message("blue "+ string(blue));
+	//show_debug_message("Green "+string(green));
 	
 }
 else if global.minutes > global.fullday/3 and global.minutes < (global.fullday*2/3){
@@ -35,26 +35,26 @@ else if global.minutes > global.fullday/3 and global.minutes < (global.fullday*2
 	
 	if blue > min_blue
 	{
-		blue -=diff(min_blue,8);
+		blue -=diff(min_blue,240);
 	}
-	show_debug_message("Red "+ string(red));
-	show_debug_message("blue "+ string(blue));
-	show_debug_message("Green "+string(green));
+	//show_debug_message("Red "+ string(red));
+	//show_debug_message("blue "+ string(blue));
+	//show_debug_message("Green "+string(green));
 }
 else if global.minutes > (global.fullday*2/3) and global.minutes < global.fullday{
 	//Between 4pm and 12am 
 	//Decrease red to minimum value
 	if red > min_red
 	{
-		red-=diff(min_red,8);
+		red-=diff(min_red,240);
 	}
 	if green > min_green
 	{
-		green-=diff(min_green,8);
+		green-=diff(min_green,240);
 	}
 	
-	show_debug_message("Red "+ string(red));
-	show_debug_message("blue "+ string(blue));
-	show_debug_message("Green "+string(green));
+	//show_debug_message("Red "+ string(red));
+	//show_debug_message("blue "+ string(blue));
+	//show_debug_message("Green "+string(green));
 }
 

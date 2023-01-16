@@ -18,7 +18,7 @@ for (var i = 0; i < len;i++){
 					{
 						case "Trowel": 
 							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
-								class        = new ToolClass("Trowel",toolA);
+								class        = new ToolClass("Trowel",s_tool_trowel,2);
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
@@ -27,7 +27,7 @@ for (var i = 0; i < len;i++){
 					
 						case "Water":
 							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
-								class        = new ToolClass("Water",toolB);
+								class        = new ToolClass("Water",s_tool_water,5);
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
@@ -36,7 +36,7 @@ for (var i = 0; i < len;i++){
 					
 						case "Hoe":
 							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
-								class        = new ToolClass("Hoe",toolC);
+								class        = new ToolClass("Hoe",s_tool_hoe,2);
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
@@ -45,7 +45,7 @@ for (var i = 0; i < len;i++){
 					
 						case "Love":
 							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
-								class        = new ToolClass("Love",toolD);
+								class        = new ToolClass("Love",s_tool_love,0);
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
