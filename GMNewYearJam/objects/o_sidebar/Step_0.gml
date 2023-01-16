@@ -6,7 +6,7 @@ var len = array_length(sidearray);
 col = floor(mouse_gui_x/64);
 row = floor(mouse_gui_y/64);
 
-//Loops through array and maps to rows and columns
+//Checks if hovering over Seeds or Shop option
 for (var i = 0; i < len;i++)
 {
 		//Checks if mouse is located here and applies state
@@ -54,6 +54,7 @@ for (var i = 0; i < len;i++)
 		}
 }
 
+//Checks if hovering over seed options
 if sidemenu
 {
 		for(var i = 0; i < 2;i++)
@@ -71,29 +72,26 @@ if sidemenu
 							{
 								switch(seedarray[i,j].name)
 								{
-									case "SeedA":
-										show_debug_message("seed A created")
-										with(instance_create_layer(mouse_x-16,mouse_y-16,"Plants",o_plant)){
-											class = new PlantClass("SeedA",0,1,0,s_seedA,0,0,0,0,10,0);
-											sprite_index = class.sprite;
-											state = plant_state.moving;
-										}
+									case "Chickpea":
+										current_seed = [seedarray[i,j].sprite,seedarray[i,j].name];
+										seed_selected = true;
 										sidemenu = false;
 										side_selected = true;
 									break;
 								
-									case "SeedB":
+									case "Tomatillo":
 									show_debug_message("seed B created")
+										current_seed = [seedarray[i,j].sprite,seedarray[i,j].name];
+										seed_selected = true;
+										sidemenu = false;
 										side_selected = true;
 									break;
 								
-									case "SeedC":
+									case "Gooseberry":
 									show_debug_message("seed C created")
-										side_selected = true;
-									break;
-								
-									case "SeedD":
-									show_debug_message("seed D created")
+										current_seed = [seedarray[i,j].sprite,seedarray[i,j].name];
+										seed_selected = true;
+										sidemenu = false;
 										side_selected = true;
 									break;
 								}
@@ -114,4 +112,57 @@ if sidemenu
 	if col > 4 or row > 5 sidemenu = false;		
 		
 
+}
+
+if seed_selected
+{
+	var c_col = o_grid.col;
+	var c_row = o_grid.row;
+	
+	var tile_id = o_grid.GroundArray[c_col,c_row];//store in local var for ease of writing
+	if left_click or left_hold{
+				//Check if the tile is NOT ground
+				if tile_id != 0
+				{
+					//With statement to avoid confusing chained dot accessors
+					with(tile_id)
+					{
+						//Check if the ground is dirt hole
+						if state == ground_state.dirt_hole
+						{
+							//Checks if this specific ground tile doesn't have a plant already
+							if current_plant == noone
+							{
+								//Creates plant object
+								var plant = instance_create_layer(mouse_x-16,mouse_y-16,"Plants",o_plant);
+								//Defines class 
+								with(plant)
+								{
+									class = new PlantClass(o_sidebar.current_seed[1],0,1,0,o_sidebar.current_seed[0],0,0,0,0,10,0);
+									visible = false;
+									state = plant_state.planted;
+								}
+								//Puts object id in the current plant array for ground tile
+								current_plant = plant.id;
+								//Sets ground state to plant 
+								state = ground_state.plant;
+								
+							}
+							
+						}
+						
+					}
+				}
+				else
+				{
+					//Play a wrong sound or show a message
+					show_debug_message("NOT GROUND");
+				}
+				//-------end of if tile_id
+	}
+	else if right_click{//deselects the seed and resets sidebar/popout menu
+		side_selected = false;
+		seed_selected = false;
+		current_seed = [];
+	}
 }

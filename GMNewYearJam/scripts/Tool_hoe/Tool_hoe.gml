@@ -31,9 +31,26 @@ function Tool_hoe(){
 						{
 							show_debug_message("grass!");
 							//Turn Grass into plain dirt and changes state
-							sprite_index = s_dirt_plain;
-							image_index = 0;
-							state = ground_state.dirt;
+							//Sprite to goto
+							work_sprite = s_dirt_plain;
+							//Index to be in
+							work_index = 0;
+							//State to goto
+							work_state = ground_state.dirt;
+							//Time to work
+							work_time = other.class.time;
+							
+							
+							
+							t_source = time_source_create(
+								time_source_game,
+								work_time,
+								time_source_units_seconds,
+								work,[work_sprite,work_index,work_state]
+							);
+							time_source_start(t_source);
+							state = ground_state.transition; 
+							
 						}
 						
 					}

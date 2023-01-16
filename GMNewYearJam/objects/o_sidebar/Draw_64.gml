@@ -37,8 +37,10 @@ if sidemenu
 				{
 					draw_sprite_ext(seedarray[i,j].sprite,0,width+(i*cellsize),height+((j+1)*cellsize),2,2,0,c_white,1);
 					if seedarray[@ i,j].state == 1 {
-						draw_rectangle_color(mouse_gui_x-32,mouse_gui_y-32,mouse_gui_x+32,mouse_gui_y,c_black,c_black,c_black,c_black,false);
-						draw_text(mouse_gui_x-16,mouse_gui_y-24,seedarray[i,j].name);
+						var seedname = seedarray[i,j].name;
+						var len = string_width(seedname);
+						if len > 0 draw_rectangle_color(mouse_gui_x-len/2,mouse_gui_y-32,mouse_gui_x+len/2,mouse_gui_y,c_black,c_black,c_black,c_black,false);
+						draw_text(mouse_gui_x-len/2,mouse_gui_y-28,seedname);
 					}
 				}
 			}
@@ -54,3 +56,6 @@ if sidemenu
 	
 }
 
+if seed_selected{
+	draw_sprite_ext(current_seed[0],0,mouse_gui_x,mouse_gui_y,1,1,0,c_white,1);
+}

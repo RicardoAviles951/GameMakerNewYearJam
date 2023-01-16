@@ -23,14 +23,29 @@ function Tool_trowel(){
 					//With statement to avoid confusing chained dot accessors
 					with(tile_id)
 					{
-						//Check if the ground is grass
+						//Check if the ground is dirt
 						if state == ground_state.dirt
 						{
 							show_debug_message("dirt!");
-							//Turn Grass into plain dirt and changes state
-							sprite_index = s_dirt_plain;
-							image_index = 3;
-							state = ground_state.dirt_hole;
+							//Sprite to goto next
+							work_sprite = s_dirt_hole;
+							//Index to be in
+							work_index = 0;
+							//State to goto next
+							work_state = ground_state.dirt_hole;
+							//Time to work
+							work_time = other.class.time;
+							
+							//Creates time source and starts it from here 
+							t_source = time_source_create(
+								time_source_game,
+								work_time,
+								time_source_units_seconds,
+								work,[work_sprite,work_index,work_state]
+							);
+							time_source_start(t_source);
+							//Goto transistion state for ground 
+							state = ground_state.transition; 
 						}
 						
 					}

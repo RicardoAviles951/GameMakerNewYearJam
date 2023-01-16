@@ -1,4 +1,4 @@
-t_source = time_source_create(time_source_global,(1/96),time_source_units_seconds,global.timer,[],-1,);
+t_source = time_source_create(time_source_global,.5,time_source_units_seconds,global.timer,[],-1,);
 time_source_start(t_source);
 
 
@@ -10,9 +10,9 @@ min_red = 140/255;
 min_green = 200/255;
 min_blue = 130/255;
 //Individual vectors
-red   = min_red;
-green = min_green;
-blue  = min_blue;
+red   = 1;
+green = 1;
+blue  = 1;
 alpha = 1;
 
 diff = function(min_color,time){

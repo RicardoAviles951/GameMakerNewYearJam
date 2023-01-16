@@ -26,8 +26,10 @@ function Tool_water(){
 						if state == ground_state.plant
 						{
 							show_debug_message("watered");
+							if sprite_index = s_dirt_mound image_index = 1;
+							current_plant.class.Wtr_lvl = 1;
 							//Turn Grass into plain dirt and changes state
-							watered = true;
+							//watered = true;
 						}
 						
 					}
