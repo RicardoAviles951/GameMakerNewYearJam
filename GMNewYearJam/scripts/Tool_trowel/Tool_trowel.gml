@@ -20,6 +20,7 @@ function Tool_trowel(){
 				//Check if the tile is NOT ground
 				if tile_id != 0
 				{
+					
 					//With statement to avoid confusing chained dot accessors
 					with(tile_id)
 					{
@@ -35,7 +36,7 @@ function Tool_trowel(){
 							work_state = ground_state.dirt_hole;
 							//Time to work
 							work_time = other.class.time;
-							
+							current_tool_sprite = other.class.sprite;
 							//Creates time source and starts it from here 
 							t_source = time_source_create(
 								time_source_game,
@@ -45,6 +46,7 @@ function Tool_trowel(){
 							);
 							time_source_start(t_source);
 							//Goto transistion state for ground 
+							if !audio_is_playing(snd_dig) audio_play_sound(snd_dig,1,false);
 							state = ground_state.transition; 
 						}
 						

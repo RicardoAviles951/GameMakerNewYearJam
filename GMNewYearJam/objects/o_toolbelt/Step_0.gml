@@ -9,11 +9,12 @@ row = floor(mouse_gui_y/64);
 //Loops through array and maps to rows and columns
 for (var i = 0; i < len;i++){
 		//Checks if mouse is located here and applies state
-		if (i+8) == col and row == 10{
+		if (i+7) == col and row == 10{
 			toolArray[@ i,0] = toolstate.hover;
 			//Cell specific logic
 			if selected == false{
 				if mouse_check_button_pressed(mb_left) {
+					audio_play_sound(snd_select,1,false);
 					switch(toolArray[i,1])
 					{
 						case "Trowel": 
@@ -22,6 +23,7 @@ for (var i = 0; i < len;i++){
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
+							
 							selected = true;
 						break;
 					
@@ -46,6 +48,15 @@ for (var i = 0; i < len;i++){
 						case "Love":
 							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
 								class        = new ToolClass("Love",s_tool_love,0);
+								sprite_index = class.sprite;
+								state = process.moving;
+							}
+							selected = true;
+						break;
+						
+						case "Bucket":
+							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
+								class        = new ToolClass("Bucket",s_tool_bucket,2);
 								sprite_index = class.sprite;
 								state = process.moving;
 							}

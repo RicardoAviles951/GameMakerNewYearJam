@@ -12,7 +12,7 @@
   "swfPrecision": 2.525,
   "bbox_left": 0,
   "bbox_right": 31,
-  "bbox_top": 4,
+  "bbox_top": 0,
   "bbox_bottom": 31,
   "HTile": false,
   "VTile": false,
@@ -65,10 +65,11 @@
   },
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2a3b4e8a-fa53-4390-a9b9-12a9dca24663","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ef18164a-400a-40e9-aca4-225507f34805","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Background",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "ObjSprites",
-    "path": "folders/Sprites/ObjSprites.yy",
+    "name": "ToolSprites",
+    "path": "folders/Sprites/ToolSprites.yy",
   },
 }

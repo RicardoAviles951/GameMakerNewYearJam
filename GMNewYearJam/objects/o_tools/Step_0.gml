@@ -19,6 +19,10 @@ switch(class.name)
 		Tool_love();
 	break;
 	
+	case "Bucket":
+		Tool_bucket();
+	break;
+	
 }
 
 

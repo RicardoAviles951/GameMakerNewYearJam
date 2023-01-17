@@ -39,7 +39,7 @@ function Tool_hoe(){
 							work_state = ground_state.dirt;
 							//Time to work
 							work_time = other.class.time;
-							
+							current_tool_sprite = other.class.sprite;
 							
 							
 							t_source = time_source_create(

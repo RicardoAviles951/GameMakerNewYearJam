@@ -17,7 +17,7 @@ for (var i = 0; i < len; i++)
 		draw_sprite_ext(toolsprites[i],0,startX+i*cellsize,startY,2,2,0,c_white,1);
 		draw_sprite_ext(s_grid,0,startX+i*cellsize,startY,4,4,0,color,1);
 		
-		draw_text(startX+8+k*cellsize,startY+8,toolArray[@ k,1]);
+		//draw_text(startX+8+k*cellsize,startY+8,toolArray[@ k,1]);
 	}
 }
 	

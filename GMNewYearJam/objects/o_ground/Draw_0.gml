@@ -10,6 +10,9 @@ if watered{
 }
 
 if state == ground_state.transition{
-	draw_sprite(s_tool_trowel,0,x,draw_y);
+	draw_sprite(current_tool_sprite,0,x,draw_y);
 	//draw_text(x+8,y+8,"WORKING");
+}
+if thirsty {
+	draw_sprite_ext(s_waterdrop,0,x+8,draw_y,.5,.5,0,c_white,1);
 }
