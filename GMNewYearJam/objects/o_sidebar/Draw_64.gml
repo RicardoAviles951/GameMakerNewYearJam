@@ -5,7 +5,7 @@ var len = array_length(sidearray);
 length = ((startY)+(cellsize*len)) - (startY);
 //Draw toolbar sprite at specified location and size
 draw_sprite_stretched(s_toolbar,0,startX,startY,cellsize,length);
-
+draw_set_font(f_GUI);
 for (var i = 0; i < len; i++)
 {
 		//Draw grid
@@ -57,5 +57,5 @@ if sidemenu
 }
 
 if seed_selected{
-	draw_sprite_ext(current_seed[0],0,mouse_gui_x,mouse_gui_y,1,1,0,c_white,1);
+	draw_sprite_ext(current_seed[0],0,mouse_gui_x,mouse_gui_y,2,2,0,c_white,1);
 }

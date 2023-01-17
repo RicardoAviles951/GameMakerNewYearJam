@@ -1,4 +1,4 @@
-function PlantClass(_name,_stage,_wtrlevel,_love,_sprite,_qual,_wtr_ret,_growth,_growthrate,_value, _neg) constructor{
+function PlantClass(_name,_stage,_wtrlevel,_love,_sprite,_qual,_wtr_ret,_growth,_growthrate,_value, _neg,_base = 10) constructor{
 	name = _name;
 	sprite = _sprite;
 	stage = _stage;
@@ -11,4 +11,5 @@ function PlantClass(_name,_stage,_wtrlevel,_love,_sprite,_qual,_wtr_ret,_growth,
 	quality = _qual;
 	neglect = _neg;
 	index = 0;
+	base = _base;
 }

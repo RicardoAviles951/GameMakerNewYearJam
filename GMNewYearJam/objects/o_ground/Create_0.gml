@@ -3,7 +3,8 @@ enum ground_state{
 	dirt,
 	dirt_hole,
 	plant,
-	transition
+	transition,
+	harvestable
 }
 
 state = ground_state.grass;
@@ -13,6 +14,11 @@ image_index = irandom(3);
 //Variables to hold which plant is growing 
 current_plant = noone;
 watered = false;
+current_tool_sprite = noone;
+thirsty = false;
+final_qual = "";
+color = c_white;
+harvested = false;
 
 //Working variables 
 work_sprite = noone;

@@ -134,11 +134,11 @@ if seed_selected
 							if current_plant == noone
 							{
 								//Creates plant object
-								var plant = instance_create_layer(mouse_x-16,mouse_y-16,"Plants",o_plant);
+								var plant = instance_create_layer(mouse_x-16,mouse_y-16,"Instances",o_plant);
 								//Defines class 
 								with(plant)
 								{
-									class = new PlantClass(o_sidebar.current_seed[1],0,1,0,o_sidebar.current_seed[0],0,0,0,0,10,0);
+									class = new PlantClass(o_sidebar.current_seed[1],0,0,0,o_sidebar.current_seed[0],0,0.1,0,1,10,0);
 									visible = false;
 									state = plant_state.planted;
 								}
