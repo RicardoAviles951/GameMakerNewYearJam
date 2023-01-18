@@ -25,12 +25,6 @@ function Tool_water(){
 						//Check if the ground is grass
 						if state == ground_state.plant
 						{
-							with(o_mama){
-								if tut == 5{
-									o_textbox.char_current = 0;
-									tut+=1;
-								}
-							}
 							show_debug_message("watered");
 							current_plant.class.Wtr_lvl = 1;
 							current_tool_sprite = other.class.sprite;
