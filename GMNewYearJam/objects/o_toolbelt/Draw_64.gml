@@ -24,4 +24,4 @@ for (var i = 0; i < len; i++)
 
 //DEBUG
 //draw_text(mouse_gui_x,mouse_gui_y, "X = " + string(mouse_gui_x) + "  Y = " + string(mouse_gui_y));
-draw_text(mouse_gui_x,mouse_gui_y, "col " + string(col) + "  row " + string(row));
+//draw_text(mouse_gui_x,mouse_gui_y, "col " + string(col) + "  row " + string(row));

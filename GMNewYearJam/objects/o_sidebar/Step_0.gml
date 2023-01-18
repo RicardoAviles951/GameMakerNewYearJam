@@ -122,8 +122,8 @@ if sidemenu
 
 if seed_selected
 {
-	var c_col = o_grid.col;
-	var c_row = o_grid.row;
+	var c_col = clamp(o_grid.col,0,17);
+	var c_row = clamp(o_grid.row,0,10);
 	
 	var tile_id = o_grid.GroundArray[c_col,c_row];//store in local var for ease of writing
 	if left_click or left_hold{
@@ -150,7 +150,7 @@ if seed_selected
 								//Defines class 
 								with(plant)
 								{
-									class = new PlantClass(o_sidebar.current_seed[1],0,0,0,o_sidebar.current_seed[0],0,0.1,0,1,10,0);
+									class = new PlantClass(o_sidebar.current_seed[1],0,0,0,o_sidebar.current_seed[0],0,random_range(0.1,0.4),0,1,10,0);
 									visible = false;
 									state = plant_state.planted;
 								}

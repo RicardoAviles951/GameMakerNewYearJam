@@ -1,4 +1,4 @@
-
+gpu_set_texfilter(false);
 global.fullday = 1440;
 global.minutes = 480;
 global.day = 0;

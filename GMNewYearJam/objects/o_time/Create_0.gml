@@ -1,4 +1,4 @@
-t_source = time_source_create(time_source_global,1/96,time_source_units_seconds,global.timer,[],-1,);
+t_source = time_source_create(time_source_global,.5,time_source_units_seconds,global.timer,[],-1,);
 time_source_start(t_source);
 
 

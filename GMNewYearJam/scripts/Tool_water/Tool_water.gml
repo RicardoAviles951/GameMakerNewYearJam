@@ -44,7 +44,7 @@ function Tool_water(){
 				else
 				{
 					//Play a wrong sound or show a message
-					show_debug_message("NOT GROUND");
+					//show_debug_message("NOT GROUND");
 				}
 				//-------end of if tile_id
 			}

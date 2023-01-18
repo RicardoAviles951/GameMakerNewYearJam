@@ -18,5 +18,6 @@ enum qualities{
 
 final_qual = "";
 color = c_white;
+base_mod = 1;
 //Debug
 //Shows all stat info

@@ -19,7 +19,7 @@ for (var i = 0; i < len;i++){
 					{
 						case "Trowel": 
 							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
-								class        = new ToolClass("Trowel",s_tool_trowel,2);
+								class        = new ToolClass("Trowel",s_tool_trowel,4);
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
@@ -37,7 +37,7 @@ for (var i = 0; i < len;i++){
 					
 						case "Hoe":
 							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
-								class        = new ToolClass("Hoe",s_tool_hoe,2);
+								class        = new ToolClass("Hoe",s_tool_hoe,6);
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
@@ -82,8 +82,8 @@ for (var i = 0; i < len;i++){
 //DEBUG 
 //Prints current row and column mouse is in
 //
-//if (mouse_gui_x > startX and mouse_gui_x < (startX+length)) {
-//	//show_debug_message("ENTER");
-//	show_debug_message("Column "+ string(col));
-//	show_debug_message("row "+ string(row));
-//}
+if (mouse_gui_x > startX and mouse_gui_x < (startX+length)) {
+	//show_debug_message("ENTER");
+	show_debug_message("Column "+ string(col));
+	show_debug_message("row "+ string(row));
+}

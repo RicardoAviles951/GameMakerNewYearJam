@@ -18,8 +18,7 @@ function DetermineQual(){
 		final_qual = "Not Bad!";
 		color = c_teal;
 	}
-	
 	//Calculate money earned
-	class.value = class.base * class.quality;
+	class.value = (class.base*base_mod) * class.quality;
 	
 }

@@ -17,7 +17,7 @@ function Tool_hoe(){
 				//First store the current column and row
 				current_col = o_grid.col;
 				current_row = o_grid.row;
-				show_debug_message(current_row);
+				//show_debug_message(current_row);
 				//Check the ground array 
 				var tile_id = o_grid.GroundArray[current_col,current_row];//store in local var for ease of writing
 				//Check if the tile is NOT ground

@@ -6,7 +6,7 @@ switch(state)
 		{
 			#region Chickpea
 			case "Chickpea":
-			
+				base_mod = 1;
 				//nested switch on stage
 				switch(class.stage)
 				{
@@ -14,25 +14,25 @@ switch(state)
 					show_debug_message("CHICKPEA");
 						//Set a sprite to set the ground to
 						class.sprite = s_dirt_mound;
-						GrowthStages(.001);
+						GrowthStages(.5);
 							
 					break;
 			
 					case 1:
 						//Set a sprite to set the ground to
 						class.sprite = s_chickpea_full;
-						GrowthStages(.001);
+						GrowthStages(.25);
 					break;
 			
 					case 2:
 						//Set a sprite to set the ground to
 						//class.sprite = s_chickpea2;
 						//As long as the growth is less than 1, then grow.
-						GrowthStages(.001);
+						GrowthStages(.5);
 					break;
 			
 					case 3:
-						
+						audio_play_sound(snd_ready,1,false);
 						state = plant_state.finished;
 					break;
 				}
@@ -42,34 +42,36 @@ switch(state)
 			#endregion 
 			#region Tomatillo
 			case "Tomatillo":
+			base_mod = 2;
 				//nested switch on stage
 				switch(class.stage)
 				{
 					case 0: //Mound stage
 						//Set a sprite to set the ground to
 						class.sprite = s_dirt_mound;
-						GrowthStages(.05);
+						GrowthStages(.25);
 						
 					break;
 			
 					case 1:
 						class.sprite = s_tomatillo_full;
-						GrowthStages(.01);
+						GrowthStages(.25);
 					break;
 			
 					case 2:
-						GrowthStages(.01);
+						GrowthStages(.25);
 					break;
 			
 					case 3:
-						GrowthStages(.01);
+						GrowthStages(.5);
 					break;
 			
 					case 4:
-						GrowthStages(.012);
+						GrowthStages(.5);
 					break;
 			
 					case 5:
+						audio_play_sound(snd_ready,1,false);
 						state = plant_state.finished;
 					break;
 			
@@ -79,19 +81,20 @@ switch(state)
 			#endregion
 			#region Gooseberry
 			case "Gooseberry":
+			base_mod = 3;
 				//nested switch on stage
 				switch(class.stage)
 				{
 					case 0:
 						//Set a sprite to set the ground to
 						class.sprite = s_dirt_mound;
-						GrowthStages(1);
+						GrowthStages(.1);
 						
 					break;
 			
 					case 1:
 						class.sprite = s_gooseberry_full;
-						GrowthStages(1.5);
+						GrowthStages(.5);
 						
 					break;
 			
@@ -100,10 +103,11 @@ switch(state)
 					break;
 			
 					case 3:
-						GrowthStages(1.5);
+						GrowthStages(1);
 					break;
 			
 					case 4:
+						audio_play_sound(snd_ready,1,false);
 						state = plant_state.finished;
 					break;
 				}

@@ -33,7 +33,7 @@ function Tool_trowel(){
 									tut+=1;
 								}
 							}
-							show_debug_message("dirt!");
+							//show_debug_message("dirt!");
 							//Sprite to goto next
 							work_sprite = s_dirt_hole;
 							//Index to be in
@@ -61,7 +61,7 @@ function Tool_trowel(){
 				else
 				{
 					//Play a wrong sound or show a message
-					show_debug_message("NOT GROUND");
+					//show_debug_message("NOT GROUND");
 				}
 				//-------end of if tile_id
 			}
