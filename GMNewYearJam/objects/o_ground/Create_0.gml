@@ -10,7 +10,7 @@ enum ground_state{
 state = ground_state.grass;
 sprite_index = s_grass
 //Randomly assigning ground state sprite
-image_index = irandom(3);
+image_index = irandom(4);
 //Variables to hold which plant is growing 
 current_plant = noone;
 watered = false;

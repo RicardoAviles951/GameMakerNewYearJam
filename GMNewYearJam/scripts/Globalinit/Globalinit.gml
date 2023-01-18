@@ -1,3 +1,4 @@
+
 global.fullday = 1440;
 global.minutes = 480;
 global.day = 0;
@@ -11,7 +12,7 @@ global.timer = function()
 }
 
 global.time_pause = false;
-
+global.tutorial = true;
 global.money = 0;
 global.plant_count = 0;
 randomize();

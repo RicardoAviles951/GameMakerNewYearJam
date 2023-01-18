@@ -23,7 +23,6 @@ for (var i = 0; i < len;i++){
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
-							
 							selected = true;
 						break;
 					
@@ -41,6 +40,12 @@ for (var i = 0; i < len;i++){
 								class        = new ToolClass("Hoe",s_tool_hoe,2);
 								sprite_index = class.sprite;
 								state = process.moving;
+							}
+							with(o_mama){
+								if tut == 0{
+									o_textbox.char_current = 0;
+									tut+=1;
+								}
 							}
 							selected = true;
 						break;
