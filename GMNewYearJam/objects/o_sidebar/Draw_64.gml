@@ -23,11 +23,12 @@ for (var i = 0; i < len; i++)
 if sidemenu
 {
 	//Draw sidemenu background 
-	draw_set_alpha(.5);
-	draw_set_color(c_black);
-	draw_roundrect(width,height*2,width+cellsize*2,height*2+cellsize*2,false);
-	draw_set_alpha(1);
-	draw_set_color(c_white);
+	//draw_set_alpha(.5);
+	//draw_set_color(c_black);
+	draw_sprite_stretched(s_container,0,width,height*2,width+cellsize,height+cellsize);
+	//draw_roundrect(width,height*2,width+cellsize*2,height*2+cellsize*2,false);
+	//draw_set_alpha(1);
+	//draw_set_color(c_white);
 	switch(popout_state)
 	{
 		case popout.seed:
@@ -39,8 +40,8 @@ if sidemenu
 					if seedarray[@ i,j].state == 1 {
 						var seedname = seedarray[i,j].name;
 						var len = string_width(seedname);
-						if len > 0 draw_rectangle_color(mouse_gui_x-len/2,mouse_gui_y-32,mouse_gui_x+len/2,mouse_gui_y,c_black,c_black,c_black,c_black,false);
-						draw_text(mouse_gui_x-len/2,mouse_gui_y-28,seedname);
+						if len > 0 draw_rectangle_color(mouse_gui_x-len/2,mouse_gui_y-48,mouse_gui_x+len/2,mouse_gui_y-24,c_black,c_black,c_black,c_black,false);
+						draw_text(mouse_gui_x-len/2,mouse_gui_y-48,seedname);
 					}
 				}
 			}
