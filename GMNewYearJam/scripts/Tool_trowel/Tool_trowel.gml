@@ -27,12 +27,6 @@ function Tool_trowel(){
 						//Check if the ground is dirt
 						if state == ground_state.dirt
 						{
-							with(o_mama){
-								if tut == 2{
-									o_textbox.char_current = 0;
-									tut+=1;
-								}
-							}
 							show_debug_message("dirt!");
 							//Sprite to goto next
 							work_sprite = s_dirt_hole;

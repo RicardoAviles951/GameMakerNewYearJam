@@ -18,21 +18,12 @@ for (var i = 0; i < len;i++){
 					switch(toolArray[i,1])
 					{
 						case "Trowel": 
-							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools))
-							{
+							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
 								class        = new ToolClass("Trowel",s_tool_trowel,2);
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
 							
-							if o_mama.state = mama.tutorial
-							{
-								if o_mama.tut == 0
-								{
-									o_textbox.char_current = 0;
-									o_textbox.myText = "That's not the Garden Hoe. RIGHT CLICK to unequip you current tool and select the garden tool."
-								}	
-							}
 							selected = true;
 						break;
 					
@@ -42,15 +33,6 @@ for (var i = 0; i < len;i++){
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
-							
-							if o_mama.state = mama.tutorial
-							{
-								if o_mama.tut == 0
-								{
-									o_textbox.char_current = 0;
-									o_textbox.myText = "That's not the Garden Hoe. RIGHT CLICK to unequip you current tool and select the garden tool."
-								}	
-							}
 							selected = true;
 						break;
 					
@@ -59,12 +41,6 @@ for (var i = 0; i < len;i++){
 								class        = new ToolClass("Hoe",s_tool_hoe,2);
 								sprite_index = class.sprite;
 								state = process.moving;
-							}
-							if o_mama.state = mama.tutorial{
-								if o_mama.tut == 0 {
-									o_mama.tut+=1;
-								}
-								
 							}
 							selected = true;
 						break;
@@ -83,14 +59,6 @@ for (var i = 0; i < len;i++){
 								class        = new ToolClass("Bucket",s_tool_bucket,2);
 								sprite_index = class.sprite;
 								state = process.moving;
-							}
-							if o_mama.state = mama.tutorial
-							{
-								if o_mama.tut == 0
-								{
-									o_textbox.char_current = 0;
-									o_textbox.myText = "That's not the Garden Hoe. RIGHT CLICK to unequip you current tool and select the garden tool."
-								}	
 							}
 							selected = true;
 						break;

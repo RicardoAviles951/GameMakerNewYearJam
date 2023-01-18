@@ -1,8 +1,8 @@
 
-startX = 128;
+startX = 64;
 startY = 16;
 TweenEasyMove(x,y,startX,startY,0,15,EaseOutCubic);
-myText ="";
+myText ="TEST string testing and more testing anad more testing and more testing and more testing test testtest hello hello hello more and more and more and more and more.";
 
 
 
@@ -14,8 +14,6 @@ char_speed = .50;
 text[text_current] = string_wrap(text[text_current], text_width);
 _len = string_length(text[text_current]);
 txt_finished = false;
-
-draw_mouse = true;
 
 
 //debug
