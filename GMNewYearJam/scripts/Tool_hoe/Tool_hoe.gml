@@ -29,12 +29,6 @@ function Tool_hoe(){
 						//Check if the ground is grass
 						if state == ground_state.grass
 						{
-							with(o_mama){
-								if tut == 1{
-									o_textbox.char_current = 0;
-									tut+=1;
-								}
-							}
 							show_debug_message("grass!");
 							//Turn Grass into plain dirt and changes state
 							//Sprite to goto

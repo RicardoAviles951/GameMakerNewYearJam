@@ -70,12 +70,6 @@ if sidemenu
 						{
 							if side_selected == false
 							{
-								with(o_mama){
-								if tut == 3{
-									o_textbox.char_current = 0;
-									tut+=1;
-								}
-							}
 								switch(seedarray[i,j].name)
 								{
 									case "Chickpea":
@@ -139,12 +133,6 @@ if seed_selected
 							//Checks if this specific ground tile doesn't have a plant already
 							if current_plant == noone
 							{
-								with(o_mama){
-								if tut == 4{
-									o_textbox.char_current = 0;
-									tut+=1;
-								}
-							}
 								//Creates plant object
 								var plant = instance_create_layer(mouse_x-16,mouse_y-16,"Instances",o_plant);
 								//Defines class 
