@@ -72,6 +72,26 @@ switch(state)
 	break;
 	
 	case mama.idle:
+		//Logic for determining to quip or not;
+		if quip 
+		{
+			if !instance_exists(o_quipbox)
+			{
+				instance_create_layer(x+32,y+16,"seqs",o_quipbox);
+			}
+			//Wait
+			time_source_start(timer);
+			
+		}
+		else
+		{
+			if instance_exists(o_quipbox)
+			{
+				instance_destroy(o_quipbox);
+			}
+			//Wait
+			time_source_start(timer);
+		}
 	
 	break;
 	

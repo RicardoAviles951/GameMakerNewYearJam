@@ -10,24 +10,43 @@ height = display_get_gui_height()/11.25;
 startX = 0;
 startY = height*2;
 cellsize = 64;
-cell_count = 2;
+cell_count = 1;
 length = 0;
 
-sidearray[0,0] = 0;
-sidearray[0,1] = "Seeds";
-sidearray[1,1] = "Shop";
-
+sidearray[0,0] = "Shop"; 
+sidearray[0,1] = cell_state.inactive;
 color = c_white;
 
-selected = false;
-
-for (var i = 0; i < cell_count; i++)
-{
-		//Mark all cells 
-		sidearray[i,0] = cell_state.inactive;
-	
+Chickpack = {
+	Psprite: s_pack_chickpeas,
+	name: "Chickpeas",
+	price: 10,
+	seedsprite: s_seed_chickpea
 }
 
+Tomatillopack = {
+	Psprite: s_pack_tomatillos,
+	name: "Tomatillos",
+	price: 20,
+	seedsprite: s_seed_tomatillo
+}
+
+Goosepack = {
+	Psprite: s_pack_gooseberries,
+	name: "Gooseberries",
+	price: 30,
+	seedsprite: s_seed_gooseberry
+}
+	
+pack_array[0] = Chickpack;
+pack_array[1] = Tomatillopack;
+pack_array[2] = Goosepack;
+selected = false;
+
+upgrade_ready = false;
+current_tool = noone;
+tool_level = 1;
+upgrade_cost = 0;
 
 //Enum for sidebar elements 
 enum popout{
@@ -39,36 +58,3 @@ enum popout{
 sidemenu = false;
 //If something from the popout has been selected
 side_selected = false;
-//If you have selected seed or shop will change this state
-popout_state = popout.none;
-
-
-//seedcount = 4;
-
-var hcells = 2;
-var vcells  = 2;
-
-for (var s = 0; s < hcells; s++){
-	for (var i = 0; i < vcells; i++){
-	seedarray[s,i] = new Seed("TestSeed",s_seed_chickpea,0);
-	show_debug_message("("+string(s)+","+string(i)+")");
-	}
-}
-
-//ChickPea
-seedarray[0,0].name = "Chickpea";
-seedarray[0,0].sprite = s_seed_chickpea;
-//Tomatillo
-seedarray[0,1].name = "Tomatillo";
-seedarray[0,1].sprite = s_seed_tomatillo;
-//Gooseberry
-seedarray[1,0].name = "Gooseberry";
-seedarray[1,0].sprite = s_seed_gooseberry;
-
-//Gooseberry
-seedarray[1,1].name = "";
-seedarray[1,1].sprite = s_pixel;
-
-current_seed = [s_pack_chickpeas,s_pack_tomatillos,s_pack_gooseberries];
-seed_selected = false;
-show_debug_message(seedarray);

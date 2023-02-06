@@ -11,6 +11,7 @@ current_col = noone;
 current_row = noone;
 
 enum qualities{
+	nothing,
 	normal,
 	great,
 	Excellent

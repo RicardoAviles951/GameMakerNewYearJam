@@ -8,8 +8,8 @@ function Tool_bucket(){
 			
 			
 			//In this state the tool should be centerd on the mouse
-			x = mouse_x - 16;
-			y = mouse_y - 16
+			x = lerp(x,mouse_x-16,.2);
+			y = lerp(y,mouse_y-16,.2);
 			//If you click on a tile while having the trowel equipped 
 			if left_click or left_hold
 			{

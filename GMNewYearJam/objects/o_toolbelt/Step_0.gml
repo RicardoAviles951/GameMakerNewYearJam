@@ -19,7 +19,7 @@ for (var i = 0; i < len;i++){
 					{
 						case "Trowel": 
 							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
-								class        = new ToolClass("Trowel",s_tool_trowel,4);
+								class        = new ToolClass("Trowel",s_tool_trowel,10/other.trowel_level,other.trowel_level);
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
@@ -28,7 +28,7 @@ for (var i = 0; i < len;i++){
 					
 						case "Water":
 							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
-								class        = new ToolClass("Water",s_tool_water,5);
+								class        = new ToolClass("Water",s_tool_water,10/other.water_level,other.water_level);
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
@@ -37,14 +37,20 @@ for (var i = 0; i < len;i++){
 					
 						case "Hoe":
 							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
-								class        = new ToolClass("Hoe",s_tool_hoe,6);
+								class        = new ToolClass("Hoe",s_tool_hoe,10/other.hoe_level,other.hoe_level);
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
-							with(o_mama){
-								if tut == 0{
-									o_textbox.char_current = 0;
-									tut+=1;
+							//Tutorial Logic 
+							if global.tutorial
+							{
+								with(o_mama)
+								{
+									if tut == 0
+									{
+										o_textbox.char_current = 0;
+										tut+=1;
+									}
 								}
 							}
 							selected = true;
@@ -84,6 +90,6 @@ for (var i = 0; i < len;i++){
 //
 if (mouse_gui_x > startX and mouse_gui_x < (startX+length)) {
 	//show_debug_message("ENTER");
-	show_debug_message("Column "+ string(col));
-	show_debug_message("row "+ string(row));
+	//show_debug_message("Column "+ string(col));
+	//show_debug_message("row "+ string(row));
 }

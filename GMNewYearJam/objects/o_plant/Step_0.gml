@@ -11,15 +11,17 @@ switch(state)
 				switch(class.stage)
 				{
 					case 0: //Mound stage 
-					show_debug_message("CHICKPEA");
+					//show_debug_message("CHICKPEA");
+					
 						//Set a sprite to set the ground to
 						class.sprite = s_dirt_mound;
-						GrowthStages(.5);
+						GrowthStages(.05);
 							
 					break;
 			
 					case 1:
 						//Set a sprite to set the ground to
+						show_debug_message("CHICKPEA2");
 						class.sprite = s_chickpea_full;
 						GrowthStages(.25);
 					break;
@@ -33,6 +35,7 @@ switch(state)
 			
 					case 3:
 						audio_play_sound(snd_ready,1,false);
+						class.neglect -= class.love;
 						state = plant_state.finished;
 					break;
 				}
@@ -72,6 +75,7 @@ switch(state)
 			
 					case 5:
 						audio_play_sound(snd_ready,1,false);
+						class.neglect -= class.love;
 						state = plant_state.finished;
 					break;
 			
@@ -108,6 +112,7 @@ switch(state)
 			
 					case 4:
 						audio_play_sound(snd_ready,1,false);
+						class.neglect -= class.love;
 						state = plant_state.finished;
 					break;
 				}

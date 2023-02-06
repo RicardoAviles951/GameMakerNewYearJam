@@ -1,18 +1,17 @@
 function Tool_hoe(){
+	
 //First we check if we in the moving state
 	switch(state)
 	{
 		case process.moving:
-			//Disable sidebar here
-			
-			
-			
+			class.level = o_toolbelt.hoe_level;
 			//In this state the tool should be centerd on the mouse
-			x = mouse_x - 16;
-			y = mouse_y - 16
+			x = lerp(x,mouse_x-16,.4);
+			y = lerp(y,mouse_y-16,.4);
 			//If you click on a tile while having the trowel equipped 
 			if left_click or left_hold
 			{
+				//class.level = o_toolbelt.hoe_level;
 			//Check if the tile is actually ground
 				//First store the current column and row
 				current_col = o_grid.col;
@@ -29,12 +28,19 @@ function Tool_hoe(){
 						//Check if the ground is grass
 						if state == ground_state.grass
 						{
-							with(o_mama){
-								if tut == 1{
-									o_textbox.char_current = 0;
-									tut+=1;
+							//Tutorial Logic 
+							if global.tutorial
+							{
+								with(o_mama)
+								{
+									if tut == 1
+									{
+										o_textbox.char_current = 0;
+										tut+=1;
+									}
 								}
 							}
+							
 							show_debug_message("grass!");
 							//Turn Grass into plain dirt and changes state
 							//Sprite to goto
@@ -44,7 +50,7 @@ function Tool_hoe(){
 							//State to goto
 							work_state = ground_state.dirt;
 							//Time to work
-							work_time = other.class.time;
+							work_time = other.class.time/other.class.level;
 							current_tool_sprite = other.class.sprite;
 							
 							

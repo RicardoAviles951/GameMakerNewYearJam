@@ -3,10 +3,10 @@ function Tool_trowel(){
 	switch(state)
 	{
 		case process.moving:
-		
+			class.level = o_toolbelt.trowel_level;
 			//In this state the tool should be centerd on the mouse
-			x = mouse_x - 16;
-			y = mouse_y - 16
+			x = lerp(x,mouse_x-16,.4);
+			y = lerp(y,mouse_y-16,.4);
 			//If you click on a tile while having the trowel equipped 
 			if left_click or left_hold
 			{
@@ -27,10 +27,16 @@ function Tool_trowel(){
 						//Check if the ground is dirt
 						if state == ground_state.dirt
 						{
-							with(o_mama){
-								if tut == 2{
-									o_textbox.char_current = 0;
-									tut+=1;
+							//Tutorial Logic 
+							if global.tutorial
+							{
+								with(o_mama)
+								{
+									if tut == 2
+									{
+										o_textbox.char_current = 0;
+										tut+=1;
+									}
 								}
 							}
 							//show_debug_message("dirt!");
@@ -41,7 +47,7 @@ function Tool_trowel(){
 							//State to goto next
 							work_state = ground_state.dirt_hole;
 							//Time to work
-							work_time = other.class.time;
+							work_time = other.class.time/other.class.level;
 							current_tool_sprite = other.class.sprite;
 							//Creates time source and starts it from here 
 							t_source = time_source_create(

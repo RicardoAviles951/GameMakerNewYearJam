@@ -2,13 +2,10 @@ function Tool_love(){
 	switch(state)
 	{
 		case process.moving:
-			//Disable sidebar here
-			
-			
 			
 			//In this state the tool should be centerd on the mouse
-			x = mouse_x - 16;
-			y = mouse_y - 16
+			x = lerp(x,mouse_x-16,.2);
+			y = lerp(y,mouse_y-16,.2);
 			//If you click on a tile while having the trowel equipped 
 			if left_click
 			{
@@ -28,6 +25,8 @@ function Tool_love(){
 						//Check if the ground is grass
 						if state == ground_state.plant
 						{
+							current_plant.class.love+=.001;
+							current_plant.class.growthrate += .001;
 							var fx = o_fx;
 							part_particles_create(fx.part_sys,x,y,fx.part_love,4);
 							audio_play_sound(snd_love,1,false);
