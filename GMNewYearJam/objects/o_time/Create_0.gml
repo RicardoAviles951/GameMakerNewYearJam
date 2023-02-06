@@ -1,4 +1,4 @@
-t_source = time_source_create(time_source_global,.5,time_source_units_seconds,global.timer,[],-1,);
+t_source = time_source_create(time_source_global,.25,time_source_units_seconds,global.timer,[],-1,);
 time_source_start(t_source);
 
 
@@ -6,9 +6,9 @@ time_source_start(t_source);
 //Decrease red starting from 8am to 4pm
 //Decrease blue starting 4pm - 12am
 //Increase to normal levels 12am to 6am
-min_red = 140/255;
-min_green = 200/255;
-min_blue = 130/255;
+min_red = 150/255;
+min_green = 100/255;
+min_blue = 100/255;
 //Individual vectors
 red   = 1;
 green = 1;

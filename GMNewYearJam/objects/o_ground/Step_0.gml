@@ -29,3 +29,4 @@ if state == ground_state.transition{
 		draw_y = draw_y + sin(timer*.2)*.5;
 		timer++;
 }
+//if current_plant != noone show_debug_message("Love = " + string(current_plant.class.love));

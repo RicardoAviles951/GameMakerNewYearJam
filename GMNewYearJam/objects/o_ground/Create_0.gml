@@ -35,6 +35,9 @@ work = function(spr,ind,_state) {
 t_source = 0;
 
 //Draw Functions
+tweenfired = false;
+scale = 1;
+tween_y = x;
 draw_x = x;
 draw_y = y;
 timer = 0;

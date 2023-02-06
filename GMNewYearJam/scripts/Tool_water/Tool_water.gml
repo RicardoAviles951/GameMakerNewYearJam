@@ -2,10 +2,10 @@ function Tool_water(){
 	switch(state)
 	{
 		case process.moving:
-		
+			class.level = o_toolbelt.water_level;
 			//In this state the tool should be centerd on the mouse
-			x = mouse_x - 16;
-			y = mouse_y - 16
+			x = lerp(x,mouse_x-16,.4);
+			y = lerp(y,mouse_y-16,.4);
 			//If you click on a tile while having the trowel equipped 
 			if left_click or left_hold
 			{
@@ -25,13 +25,19 @@ function Tool_water(){
 						//Check if the ground is grass
 						if state == ground_state.plant
 						{
-							with(o_mama){
-								if tut == 5{
-									o_textbox.char_current = 0;
-									tut+=1;
+							//Tutorial Logic 
+							if global.tutorial
+							{
+								with(o_mama)
+								{
+									if tut == 5
+									{
+										o_textbox.char_current = 0;
+										tut+=1;
+									}
 								}
 							}
-							show_debug_message("watered");
+							//show_debug_message("watered");
 							current_plant.class.Wtr_lvl = 1;
 							current_tool_sprite = other.class.sprite;
 							if !audio_is_playing(snd_water) audio_play_sound(snd_water,1,false);

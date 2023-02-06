@@ -10,8 +10,18 @@ if watered{
 }
 
 if state == ground_state.transition{
-	draw_sprite(current_tool_sprite,0,x,draw_y);
+	if tweenfired == false{
+		TweenFire(id,EaseOutBounce,0,true,0,.5,"scale",0,1);
+		TweenFire(id,EaseInOutElastic,TWEEN_MODE_PATROL,true,0,.5,"tween_y",y-2,y+2);
+		tweenfired = true;
+	}
+	draw_sprite_ext(current_tool_sprite,0,x,tween_y,scale,scale,0,c_white,1);
 	//draw_text(x+8,y+8,"WORKING");
+}
+else{
+	tween_y = y;
+	scale   = 0;
+	tweenfired = false;
 }
 if thirsty {
 	draw_sprite_ext(s_waterdrop,0,x+8,draw_y,.5,.5,0,c_white,1);

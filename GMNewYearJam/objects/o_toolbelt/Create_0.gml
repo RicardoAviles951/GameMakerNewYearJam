@@ -22,22 +22,21 @@ toolArray[4,1] = "Bucket";
 toolsprites[0] = s_UI_trowel;
 toolsprites[1] = s_UI_wateringcan;
 toolsprites[2] = s_UI_gardenhoe;
-toolsprites[3] = s_tool_love;
+toolsprites[3] = s_UI_love;
 toolsprites[4] = s_UI_bucket;
 
 color = c_white;
-
+alpha = 0.75;
 selected = false;
 
 for (var i = 0; i < cell_count; i++)
 {
 		//First column
 		toolArray[i,0] = toolstate.inactive;
-		//Second column
-		//toolArray[k,1] = "TOOLS";
-		
-	
 }
-//show_debug_message(toolArray);
 
+//Tool levels
+trowel_level = 1;
+hoe_level = 1;
+water_level = 1;
 
