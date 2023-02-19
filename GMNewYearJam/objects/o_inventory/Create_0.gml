@@ -1,16 +1,16 @@
 //Seeds
 chickpeas    = {
-	count: 5,
+	count: 10,
 	name: "Chickpea",
 	spr: s_seed_chickpea
 }
 tomatillos   = {
-	count: 0,
+	count: 5,
 	name: "Tomatillo",
 	spr: s_seed_tomatillo
 }
 gooseberries = {
-	count: 0,
+	count: 5,
 	name: "Gooseberry",
 	spr: s_seed_gooseberry
 }
