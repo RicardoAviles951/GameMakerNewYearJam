@@ -1,6 +1,6 @@
 //Seeds
 chickpeas    = {
-	count: 0,
+	count: 5,
 	name: "Chickpea",
 	spr: s_seed_chickpea
 }
@@ -15,6 +15,7 @@ gooseberries = {
 	spr: s_seed_gooseberry
 }
 
+totalseeds = chickpeas.count + tomatillos.count + gooseberries.count;
 //UI dimensions
 width  = display_get_gui_width()/20;
 height = display_get_gui_height()/11.25;
@@ -27,3 +28,12 @@ inv = [chickpeas,tomatillos,gooseberries];
 
 seed_selected = false;
 current_seed = noone;
+
+wobbleY = mouse_gui_y;
+wobble = 0;
+
+hover = false;
+hovername = "";
+alpha = 0;
+active = false;
+alarm[0] = 60;

@@ -1,0 +1,1 @@
+if gui_draw part_system_drawit(part_sys);

@@ -1,0 +1,1 @@
+TweenEasyRotate(0,360,0,30,EaseInOutBack,TWEEN_MODE_ONCE);

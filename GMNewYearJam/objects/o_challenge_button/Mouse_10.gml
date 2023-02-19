@@ -1,0 +1,1 @@
+TweenEasyScale(image_xscale,image_yscale,1.25,1.25,0,15,EaseOutBounce);

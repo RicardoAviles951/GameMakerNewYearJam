@@ -61,4 +61,8 @@ else if global.minutes > (global.fullday*2/3) and global.minutes < global.fullda
 	//show_debug_message("Green "+string(green));
 }
 
+if active{
+	if alpha < 1 alpha +=.02;
+}
 //show_debug_message("Money = "+string(global.money));
+

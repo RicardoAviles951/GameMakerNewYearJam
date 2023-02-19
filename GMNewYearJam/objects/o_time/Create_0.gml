@@ -26,3 +26,7 @@ fx_set_parameter(_fx_tint, "g_TintCol", [clamp(red,0,1), clamp(green,0,1), clamp
 layer_set_fx("DayNight", _fx_tint);
 
 timer = 0;
+
+alpha = 0;
+active = false;
+alarm[0] = 60;

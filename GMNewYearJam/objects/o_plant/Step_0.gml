@@ -15,13 +15,13 @@ switch(state)
 					
 						//Set a sprite to set the ground to
 						class.sprite = s_dirt_mound;
-						GrowthStages(.05);
+						GrowthStages(.1);
 							
 					break;
 			
 					case 1:
 						//Set a sprite to set the ground to
-						show_debug_message("CHICKPEA2");
+						//show_debug_message("CHICKPEA2");
 						class.sprite = s_chickpea_full;
 						GrowthStages(.25);
 					break;
@@ -30,7 +30,7 @@ switch(state)
 						//Set a sprite to set the ground to
 						//class.sprite = s_chickpea2;
 						//As long as the growth is less than 1, then grow.
-						GrowthStages(.5);
+						GrowthStages(.25);
 					break;
 			
 					case 3:
@@ -58,15 +58,15 @@ switch(state)
 			
 					case 1:
 						class.sprite = s_tomatillo_full;
-						GrowthStages(.25);
+						GrowthStages(.1);
 					break;
 			
 					case 2:
-						GrowthStages(.25);
+						GrowthStages(.2);
 					break;
 			
 					case 3:
-						GrowthStages(.5);
+						GrowthStages(.1);
 					break;
 			
 					case 4:
@@ -92,7 +92,7 @@ switch(state)
 					case 0:
 						//Set a sprite to set the ground to
 						class.sprite = s_dirt_mound;
-						GrowthStages(.1);
+						GrowthStages(.01);
 						
 					break;
 			
@@ -107,7 +107,7 @@ switch(state)
 					break;
 			
 					case 3:
-						GrowthStages(1);
+						GrowthStages(.75);
 					break;
 			
 					case 4:

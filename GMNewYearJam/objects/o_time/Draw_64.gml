@@ -4,5 +4,5 @@ var mins  = global.minutes mod 60;
 
 //Custom Function that formats time in a 00:00 format 
 //Draws Day 
-format_time(hours,mins);
+if active format_time(hours,mins);
 

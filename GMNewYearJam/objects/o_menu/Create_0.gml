@@ -5,6 +5,7 @@ option[1] = "Quick Play";
 option[2] = "Credits";
 option[3] = "Exit";
 
+//Number of buttons
 buttons = 4;
 
 //Creates a set of menu states
@@ -16,8 +17,9 @@ enum menu_states{
 menu_state = menu_states.inactive;
 
 startX = room_width/8;
+//Creates buttons outside of room
 startY = -room_height;
-
+//Where buttons will end up
 finalY = room_height/8;
 padding = 68;
 //Generate Button instances
@@ -32,6 +34,10 @@ for(var i = 0; i < buttons; i++){
 	}
 	
 }
-
-//Set menu state
+active = true;
+alpha = 0;
+//Set menu state after 60 frames
 alarm[0] = 60;
+
+x_adj = 0;
+y_adj = 0;

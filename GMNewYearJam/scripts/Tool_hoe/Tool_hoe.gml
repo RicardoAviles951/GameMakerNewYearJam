@@ -14,8 +14,8 @@ function Tool_hoe(){
 				//class.level = o_toolbelt.hoe_level;
 			//Check if the tile is actually ground
 				//First store the current column and row
-				current_col = o_grid.col;
-				current_row = o_grid.row;
+				current_col = clamp(o_grid.col,0,17);
+				current_row = clamp(o_grid.row,0,10);
 				//show_debug_message(current_row);
 				//Check the ground array 
 				var tile_id = o_grid.GroundArray[current_col,current_row];//store in local var for ease of writing
@@ -41,7 +41,7 @@ function Tool_hoe(){
 								}
 							}
 							
-							show_debug_message("grass!");
+							//show_debug_message("grass!");
 							//Turn Grass into plain dirt and changes state
 							//Sprite to goto
 							work_sprite = s_dirt_plain;
@@ -62,6 +62,8 @@ function Tool_hoe(){
 							);
 							time_source_start(t_source);
 							state = ground_state.transition; 
+							var pitch = random_range(.9,1.5);
+							if !audio_is_playing(snd_gardenhoe) audio_play_sound(snd_gardenhoe,1,false,1,0,pitch);
 							
 						}
 						

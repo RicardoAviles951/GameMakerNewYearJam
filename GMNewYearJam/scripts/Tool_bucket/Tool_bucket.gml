@@ -15,9 +15,9 @@ function Tool_bucket(){
 			{
 			//Check if the tile is actually ground
 				//First store the current column and row
-				current_col = o_grid.col;
-				current_row = o_grid.row;
-				show_debug_message(current_row);
+				current_col = clamp(o_grid.col,0,17);
+				current_row = clamp(o_grid.row,0,10);
+				//show_debug_message(current_row);
 				//Check the ground array 
 				var tile_id = o_grid.GroundArray[current_col,current_row];//store in local var for ease of writing
 				//Check if the tile is NOT ground
@@ -31,6 +31,7 @@ function Tool_bucket(){
 						{
 							if !audio_is_playing(snd_collect) audio_play_sound(snd_collect,1,false);
 							global.money += current_plant.class.value;
+							global.seedsinplay -= 1;
 							watered = false;
 							final_qual = current_plant.final_qual;
 							color = current_plant.color;
@@ -45,8 +46,9 @@ function Tool_bucket(){
 							//Reset Ground
 							instance_destroy(current_plant);
 							current_plant = noone;
-							sprite_index = s_grass;
-							image_index = irandom(2);
+							sprite_index = s_grass_tiled_short;
+							image_index = grass.regular + irandom(3);
+							GroundTileCheck();
 							state = ground_state.grass;
 							
 						}
