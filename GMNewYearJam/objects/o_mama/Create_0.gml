@@ -5,12 +5,30 @@ enum mama{
 	walk
 }
 
+enum paths {
+	pth1,
+	pth2,
+	pth3,
+	pth4
+}
+
+pathstate = paths.pth1;
+currentpath = noone;
+exitpath = false
+next = noone;
+time = 0;
+wait = function()
+	{
+		walking = false;
+		pathstate = next;
+	}
+
 //Sets state depnding on tutorial state.
 if global.tutorial{
 	state = mama.tutorial;
 }
 else{
-	state = mama.idle;
+	state = mama.walk;
 }
 
 //Gets dimensions of Sprite
@@ -25,8 +43,10 @@ ToggleQuip = function(){
 	show_debug_message("TOGGLE QUIP");
 }
 
-timer = time_source_create(time_source_global,5,time_source_units_seconds,ToggleQuip);
+timer = time_source_create(time_source_global,15,time_source_units_seconds,ToggleQuip);
 
 //Tracks steps in tutorial
 tut = 0;
+
+walking = false;
 

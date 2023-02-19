@@ -1,2 +1,4 @@
-audio_stop_all();
-room_restart();
+///@description DEBUG
+
+//audio_stop_all();
+//room_restart();

@@ -1,4 +1,7 @@
-if !instance_exists(o_quipbox){
-	instance_create_layer(x+32,y+16,"seqs",o_quipbox);
+if global.tutorial
+{
+	instance_destroy(o_textbox)
+	sprite_index = s_mama_idle;
+	state = mama.idle;
+	global.tutorial = false;
 }
-

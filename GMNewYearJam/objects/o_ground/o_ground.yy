@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "s_grass",
-    "path": "sprites/s_grass/s_grass.yy",
+    "name": "s_grass_tiled_short",
+    "path": "sprites/s_grass_tiled_short/s_grass_tiled_short.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -11,8 +11,10 @@ global.timer = function()
 	global.minutes+=global.time_rate;	
 }
 
-global.time_pause = false;
+global.pause = false;
 global.tutorial = true;
-global.money = 500;
+global.money = 50;
 global.plant_count = 0;
+global.seedsinplay = 0;
+window_set_cursor(cr_none);
 randomize();

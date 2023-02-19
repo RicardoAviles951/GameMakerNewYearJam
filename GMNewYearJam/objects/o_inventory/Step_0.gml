@@ -1,8 +1,11 @@
 GetInput();
+if active {
+	if alpha < 1 alpha +=.02;
+}
 //Get coloumns and rows for GUI
 col = floor(mouse_gui_x/64);
 row = floor(mouse_gui_y/64);
-
+hover = false;
 //Make sure in the right column
 if col == 19 {
 	for(var i = 0; i < 3;i++)
@@ -10,10 +13,30 @@ if col == 19 {
 		//Loops through different rows
 		if row == i+7
 		{
+			
+			//hover logic
+			hover = true;
+			hovername = inv[i].name;
+			
 			if left_click
 			{
+				
 				var seed = inv[i];
 				if seed_selected == false and seed.count > 0
+				{
+				audio_play_sound(snd_select2,1,false);
+				//Tutorial Logic 
+				if global.tutorial
+					{
+						with(o_mama)
+						{
+							if tut == 3
+							{
+								o_textbox.char_current = 0;
+								tut+=1;
+							}
+						}
+					}
 				{
 					switch(seed.name)
 					{
@@ -34,6 +57,7 @@ if col == 19 {
 					}
 				}
 				show_debug_message(seed.name);
+				}
 			}
 		}
 	}
@@ -41,6 +65,8 @@ if col == 19 {
 
 if seed_selected
 {
+	wobbleY = mouse_gui_y + cos(wobble*.08)*8-16;
+	wobble++;
 	var c_col = clamp(o_grid.col,0,17);
 	var c_row = clamp(o_grid.row,0,10);
 	
@@ -61,8 +87,21 @@ if seed_selected
 								
 								if other.current_seed.count > 0
 								{
+									//Tutorial Logic 
+									if global.tutorial
+									{
+										with(o_mama)
+										{
+											if tut == 4
+											{
+												o_textbox.char_current = 0;
+												tut+=1;
+											}
+										}
+									}
+									audio_play_sound(snd_placeseed,1,false);
 									//Creates plant object
-								var plant = instance_create_layer(mouse_x-16,mouse_y-16,"Instances",o_plant);
+								var plant = instance_create_layer(mouse_x,mouse_y,"Instances",o_plant);
 								//Defines class 
 								with(plant)
 								{
@@ -70,6 +109,8 @@ if seed_selected
 									visible = false;
 									state = plant_state.planted;
 								}
+								global.seedsinplay +=1;
+								global.plant_count +=1;
 								//Puts object id in the current plant array for ground tile
 								current_plant = plant.id;
 								//Sets ground state to plant 
@@ -94,7 +135,18 @@ if seed_selected
 	}
 	else if right_click or current_seed.count <=0
 	{//deselects the seed and resets sidebar/popout menu
+		audio_play_sound(snd_deselect,2,false);
 		seed_selected = false;
 		current_seed = noone;
 	}
 }
+
+
+//Check for unwinnable condition
+totalseeds = chickpeas.count + tomatillos.count + gooseberries.count;
+
+if totalseeds == 0 and global.money < 10 and global.seedsinplay == 0 {
+	global.money += 10;
+}
+
+show_debug_message("Planted seeds = "+ string(global.seedsinplay));

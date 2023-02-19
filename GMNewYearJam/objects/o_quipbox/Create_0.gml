@@ -23,7 +23,8 @@ TeddyText[3] = "Mum makes the best curry chickpea-loaded baked potatoes. You got
 TeddyText[4] = "Let's... do this!";
 
 //Code for Typing out text
-text[0] =MamaText[irandom(3)];
+
+text[0] = MamaText[irandom(3)];
 text_current = 0;
 text_width = 272;
 char_current = 1;

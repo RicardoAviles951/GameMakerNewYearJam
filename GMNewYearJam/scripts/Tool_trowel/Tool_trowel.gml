@@ -12,8 +12,8 @@ function Tool_trowel(){
 			{
 			//Check if the tile is actually ground
 				//First store the current column and row
-				current_col = o_grid.col;
-				current_row = o_grid.row;
+				current_col = clamp(o_grid.col,0,17);
+				current_row = clamp(o_grid.row,0,10);
 				
 				//Check the ground array 
 				var tile_id = o_grid.GroundArray[current_col,current_row];//store in local var for ease of writing

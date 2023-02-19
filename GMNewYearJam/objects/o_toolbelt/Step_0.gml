@@ -1,5 +1,7 @@
 //Detect if mouse is in range 
-
+if active {
+	if alphaGL < 1 alphaGL +=.02;
+}
 //Get length of array
 var len = array_length(toolArray);
 //Get coloumns and rows for GUI
@@ -9,7 +11,7 @@ row = floor(mouse_gui_y/64);
 //Loops through array and maps to rows and columns
 for (var i = 0; i < len;i++){
 		//Checks if mouse is located here and applies state
-		if (i+7) == col and row == 10{
+		if (i+offset) == col and row == 10{
 			toolArray[@ i,0] = toolstate.hover;
 			//Cell specific logic
 			if selected == false{
@@ -28,7 +30,7 @@ for (var i = 0; i < len;i++){
 					
 						case "Water":
 							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
-								class        = new ToolClass("Water",s_tool_water,10/other.water_level,other.water_level);
+								class        = new ToolClass("Water",s_tool_water,6/other.water_level,other.water_level);
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
@@ -57,9 +59,11 @@ for (var i = 0; i < len;i++){
 						break;
 					
 						case "Love":
+							if !audio_is_playing(snd_heartbeat) audio_play_sound(snd_heartbeat,2,true);
 							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
 								class        = new ToolClass("Love",s_tool_love,0);
 								sprite_index = class.sprite;
+								TweenEasyScale(image_xscale,image_yscale,1.2,1.2,0,30,EaseInOutElastic,TWEEN_MODE_PATROL);
 								state = process.moving;
 							}
 							selected = true;
@@ -67,7 +71,7 @@ for (var i = 0; i < len;i++){
 						
 						case "Bucket":
 							with(instance_create_layer(mouse_x-16,mouse_y-16,"Tools",o_tools)){
-								class        = new ToolClass("Bucket",s_tool_bucket,2);
+								class        = new ToolClass("Bucket",s_tool_bucket,0);
 								sprite_index = class.sprite;
 								state = process.moving;
 							}
@@ -82,14 +86,4 @@ for (var i = 0; i < len;i++){
 		{
 			toolArray[@ i,0] = toolstate.inactive;
 		}
-}
-	
-
-//DEBUG 
-//Prints current row and column mouse is in
-//
-if (mouse_gui_x > startX and mouse_gui_x < (startX+length)) {
-	//show_debug_message("ENTER");
-	//show_debug_message("Column "+ string(col));
-	//show_debug_message("row "+ string(row));
 }

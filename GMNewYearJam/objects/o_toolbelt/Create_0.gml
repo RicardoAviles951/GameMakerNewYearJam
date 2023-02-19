@@ -6,7 +6,8 @@ enum toolstate {
 #macro mouse_gui_y device_mouse_y_to_gui(0)
 width = display_get_gui_width()/20;
 height = display_get_gui_height()/11.25;
-startX = width*7;
+offset = 8
+startX = width*offset;
 startY = height*10;
 cellsize = 64;
 cell_count = 5;
@@ -28,6 +29,7 @@ toolsprites[4] = s_UI_bucket;
 color = c_white;
 alpha = 0.75;
 selected = false;
+alphaGL = 0;
 
 for (var i = 0; i < cell_count; i++)
 {
@@ -40,3 +42,7 @@ trowel_level = 1;
 hoe_level = 1;
 water_level = 1;
 
+tool_scale = 2;
+container_scale = 1;
+active = false;
+alarm[0] = 60;

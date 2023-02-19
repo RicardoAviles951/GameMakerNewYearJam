@@ -1,0 +1,1 @@
+PlaySeq(sq_transition,0,seqdir_right);

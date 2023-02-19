@@ -5,8 +5,8 @@ function Plant_Seed(){
 	break;
 	
 	case plant_state.moving:
-		x = mouse_x - 16;
-		y = mouse_y - 16;
+		//x = mouse_x - 16;
+		//y = mouse_y - 16;
 		
 		if left_click
 			{
@@ -31,6 +31,8 @@ function Plant_Seed(){
 							current_plant = other.id;
 							o_sidebar.side_selected = false;
 							other.state = plant_state.planted;
+							global.seedsinplay +=1;
+							global.plant_count +=1;
 							state = ground_state.plant;
 						}
 						
