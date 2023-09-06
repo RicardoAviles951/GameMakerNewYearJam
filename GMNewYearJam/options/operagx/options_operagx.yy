@@ -8,11 +8,11 @@
   "option_operagx_guid": "de9a8e2f-a43e-442a-bc2e-0631c2f1b156",
   "option_operagx_internalShareUrl": "https://gx.games/games/4c9e83/mama-s-sunnyside-garden/tracks/67ebb829-a95a-4b3f-ac89-d00f9e61c577/",
   "option_operagx_interpolate_pixels": true,
-  "option_operagx_next_version": "1.0.0.2",
+  "option_operagx_next_version": "1.0.0.3",
   "option_operagx_publicShareUrl": "https://gx.games/games/4c9e83/mama-s-sunnyside-garden/",
   "option_operagx_scale": 0,
   "option_operagx_team_id": "7ea805a2-8278-42cb-b566-2ccf0002f6af",
   "option_operagx_team_name": "RicardoAviles studio",
   "option_operagx_texture_page": "2048x2048",
-  "option_operagx_version": "1.0.0.1",
+  "option_operagx_version": "1.0.0.2",
 }

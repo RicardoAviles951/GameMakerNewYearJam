@@ -7,7 +7,7 @@ switch(state)
 			if !instance_exists(o_textbox){
 				with(instance_create_layer(128,-256,"Controllers",o_textbox))
 				{
-					myText = "Welcome to Sunny Side Isle, it's so nice to see you again. I'm so grateful you came to help me in my garden.\n\nYou can start by LEFT CLICKING on the the GARDEN HOE."
+					myText = "Welcome to Sunny Side Isle, it's so nice to see you again. I'm so grateful you came to help me in my garden.\n\nYou can start by LEFT CLICKING on the GARDEN HOE."
 					
 				}
 			}

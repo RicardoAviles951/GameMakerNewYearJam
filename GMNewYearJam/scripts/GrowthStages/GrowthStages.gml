@@ -25,8 +25,5 @@ function GrowthStages(stage_scale = 1){
 	//Neglect determines the final quality of the plant 
 	if class.Wtr_lvl <= 0 class.neglect += 1/fullday;
 	
-	//show_debug_message("Growth = " + string(class.growth) + "\nWater Level = " + string(class.Wtr_lvl) + "\nNeglect = "+string(class.neglect));
-	
-	
 	
 }//End of function
